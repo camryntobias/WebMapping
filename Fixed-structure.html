@@ -20,7 +20,7 @@
         
         /* CSS code for fixed map 3*/
           
-          #map3 { position: relative; height: 300px; width:100%;}
+          #map3 { position: relative; height:300px; width:100%;}
 
     </style>
   </head>
@@ -35,9 +35,11 @@
 
           <h2> Mount Rainier National Park:</h2>
           <div id='map2'></div>
+          <hr>
 
           <h2> North Cascades National Park:</h2>
           <div id='map3'></div>
+          <hr>
 
         <script>
             /* Insert the JavaScript within the <script> tags, within the body */
@@ -47,7 +49,7 @@
             // 2.2 Then initialize the first map
             var map = new mapboxgl.Map({
                 container: 'map1', // id of a div on your page, where the map will be inserted
-                style: 'mapbox://styles/mapbox/outdoors-v12', // the style URL 'mapbox://styles/mapbox/streets-v11' 
+                style: 'mapbox://styles/mapbox/outdoors-v12',
                 center: [-123.62228372664781, 47.811628056659494], // starting position [lng, lat] eg. [-122.6788, 45.5212]
                 zoom: 10 // starting zoom 
                 });
@@ -76,7 +78,7 @@
             // 2.5.3 Then initialize the 2nd map
             var map2 = new mapboxgl.Map({
                 container: 'map2', // id of a div on your page, where the map will be inserted
-                style: 'mapbox://styles/mapbox/outdoors-v12', // stylesheet location
+                style: 'mapbox://styles/mapbox/outdoors-v12',
                 center: [-121.7203945253046, 46.86654416703999], // starting position [lng, lat] eg. [-122.6788, 45.5212]
                 zoom: 10 // starting zoom 
                 });
@@ -104,7 +106,7 @@
 
             var map3 = new mapboxgl.Map({
                 container: 'map3', // id of a div on your page, where the map will be inserted
-                style: 'mapbox://styles/mapbox/outdoors-v12', // stylesheet location
+                style: 'mapbox://styles/mapbox/outdoors-v12',
                 center: [-121.29938582502655, 48.77496008186139], // starting position [lng, lat] eg. [-122.6788, 45.5212]
                 zoom: 9 // starting zoom 
                 }); 
@@ -112,7 +114,7 @@
             var popup3 = new mapboxgl.Popup()
                 .setText('Rugged beauty, extensive glaciers, and solitude.');
 
-            var marker3 = new mapboxgl.Marker({color:'orange'})
+            var marker3 = new mapboxgl.Marker({color:'green'})
                 .setLngLat([-121.25449881328727, 48.76921370643268]) // starting position [lng, lat] 
                 .setPopup(popup3) //add the popup to the marker 
                 .addTo(map3); // id it to the map with the ID *map3*    
@@ -131,6 +133,7 @@
             map.getCanvas().style.cursor = 'auto';
             map2.getCanvas().style.cursor = 'auto';
             map3.getCanvas().style.cursor = 'auto';
+            
         </script>
   </body>
 </html>
