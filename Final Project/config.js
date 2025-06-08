@@ -23,7 +23,7 @@ var config = {
             alignment: 'left',
             hidden: false,
             title: 'Mile 0 - Backpackers Campground',
-            image: './JMTPhotos/IMG_1412.jpg',
+            image: './IMG_1412.jpg',
             description: `
     A quiet pine grove on the Merced River, your first taste of wilderness.<br>
     <ul>
@@ -53,7 +53,7 @@ var config = {
             alignment: 'left',
             hidden: false,
             title: 'Mile 6.5 - Sunrise High Sieraa Camp',
-            image: './JMTPhotos/IMG_1431.jpg',
+            image: './IMG_1431.jpg',
             description: `
     After a steep climb out of the valley, you’ll crest into the high country at Sunrise Camp. Take a moment to look back at Yosemite Valley’s lush green, then peer forward to the jagged ridge lines that mark the Sierra Crest. <br>
     <ul>
@@ -82,7 +82,7 @@ var config = {
             alignment: 'left',
             hidden: false,
             title: 'Mile 22 - Lyell Canyon & Tuolumne Meadows',
-            image: './JMTPhotos/IMG_1497.jpg',
+            image: './IMG_1497.jpg',
             description: `
     Sunrise High Sierra Camp to Lyell Canyon. soft meadow grasses, wildflowers in summer, and the steady flow of the Lyell Fork. Pause at Tuolumne Meadows Grill for lunch on a sun-warmed deck
     <ul>
