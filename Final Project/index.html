@@ -29,7 +29,7 @@
             position: relative;
             height: 100vh;
             width: 100vw;
-            background-image: url('./hero.jpg');
+            background-image: url('./JMTPhotos/hero.jpg');
             background-size: cover;
             background-position: center;
             display: flex;
@@ -66,9 +66,7 @@
             z-index: 5;
         }
 
-        #header h1
-        /*#header h2,
-        #header p */ {
+        #header h1 {
             width: 100%;
             margin: 0;
             padding: 2vh 2vw;
@@ -118,25 +116,7 @@
             padding-top: 10vh;
             padding-bottom: 10vh;
         }
-        /*
-        /* in your <style> …
-        #compass-overlay {
-            position: fixed;
-            top: 1.5rem;
-            right: 1.5rem;
-            width: 48px;
-            height: 48px;
-            z-index: 1000;
-            pointer-events: none;
-            transform-origin: center;
-            opacity: 0.85;
-        }
 
-        #compass-overlay svg {
-            width: 100%;
-            height: 100%;
-        }
-        */
         #chart-container {
             position: fixed;
             bottom: 0;
@@ -150,6 +130,7 @@
             width: 100% !important;   /* force canvas to fill parent */
             height: 100% !important;
         }
+
         .hidden {
             visibility: hidden;
         }
@@ -231,21 +212,13 @@
 <body>
 
     <div id="hero">
-        <h1>Mapping the John Muir Trail</h1>
+        <h1>A Guide to Hiking the John Muir Trail</h1>
         <h2>The ins and outs of thru-hiking the spectacular Eastern Sierra Mountains</h2>
         <p>By Camryn Tobias</p>
     </div>
     <div id="map"></div>
     <div id="story"></div>
     <div id="scroll-arrow">↓</div>
-    <!-- Optional: custom compass overlay
-    <div id="compass-overlay">
-        <svg viewBox="0 0 24 24">
-            <path d="M12 2L15 10H9L12 2Z" fill="#fff"/>
-            <circle cx="12" cy="12" r="11" stroke="#fff" stroke-width="2" fill="none"/>
-        </svg>
-    </div>
--->
     <div id="chart-container" style="position:fixed;bottom:0;left:0;width:100%;height:20vh;background:rgba(255,255,255,0.9);z-index:5;">
         <canvas id="elevation-chart"></canvas>
     </div>
@@ -311,6 +284,9 @@
             var container = document.createElement('div');
             var chapter = document.createElement('div');
 
+
+            container.appendChild(chapter);
+
             if (record.title) {
                 var title = document.createElement('h3');
                 title.innerText = record.title;
@@ -344,7 +320,19 @@
             features.appendChild(container);
         });
 
-        story.appendChild(features);
+        story.appendChild(features);  
+
+        document.querySelectorAll('.step').forEach((step, i) => {
+            step.setAttribute('tabindex', '0');       // make each chapter focusable
+            step.addEventListener('keydown', e => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    // when they hit ↵ or Space, scroll it into view (fires Scrollama)
+                    step.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    // if you want to immediately jump the map (bypassing scroll):
+                    // scroller.gotoStep(i);
+                }
+            });
+        });        
 
         var footer = document.createElement('div');
 
@@ -372,8 +360,7 @@
             interactive: false,
             projection: config.projection
         });
-        /*
-        // ── 1) Add built-in compass (NavigationControl) ───────────────────
+        // built-in compass (NavigationControl) 
         map.addControl(
             new mapboxgl.NavigationControl({
                 showCompass: true,
@@ -382,15 +369,7 @@
             }),
             'top-right'
         );
-        // ── 2) Add custom overlay that also rotates with the map ─────────
-        map.on('move', () => {
-            const bearing = map.getBearing();
-            const el = document.getElementById('compass-overlay');
-            if (el) {
-                el.style.transform = `rotate(${-bearing}deg)`;
-            }
-        });
-        */
+
         // Create a inset map if enabled in config.js
         if (config.inset) {
             map.addControl(
@@ -425,6 +404,7 @@
         let distances = [];
         let elevations = [];
         let highlightRange = { start: 0, end: 0 };
+        const M_TO_FEET   = 3.28084;
 
         // fetch the GeoJSON once up front
         fetch('./map.geojson')
@@ -448,10 +428,9 @@
                         distances.push(distances[i - 1] + d);
                     }
                 }
-
                 // after your loop that fills distances[] in km and elevations[] in meters:
                 const KM_TO_MILES = 0.621371;
-                const M_TO_FEET   = 3.28084;
+                const M_TO_FEET = 3.28084;
                 // convert in‐place:
                 distances = distances.map(d => d * KM_TO_MILES);
                 elevations = elevations.map(e => e * M_TO_FEET);
@@ -515,7 +494,7 @@
                         }
                     }             
                 });
-             })
+            })
             .catch(err => console.error('Couldn’t load trail.geojson', err));
 
         map.on("load", function () {
@@ -654,11 +633,18 @@
                     progress: true
                 })
                 .onStepEnter(async response => {
-                    //var current_chapter = config.chapters.findIndex(chap => chap.id === response.element.id);
                     // find the numeric index of the chapter that just triggered
                     var currentChapterIndex = config.chapters.findIndex(
                         (c) => c.id === response.element.id
                     );
+
+                // ←– NEW: hide the elevation chart on the very last chapter
+                const chartEl = document.getElementById('chart-container');
+                if (currentChapterIndex === config.chapters.length - 1) {
+                    chartEl.style.display = 'none';
+                } else {
+                    chartEl.style.display = '';
+                }
 
                     // hide after the first 3 chapters (i.e. index >= 3)
                     var arrow = document.getElementById("scroll-arrow");
@@ -757,6 +743,7 @@
                             document.querySelectorAll('[data-scrollama-index="' + next_chapter.toString() + '"]')[0].scrollIntoView();
                         });
                     }
+
                 })
                 .onStepExit(response => {
                     var chapter = config.chapters.find(chap => chap.id === response.element.id);
@@ -766,11 +753,12 @@
                     }
                 });
 
-
             if (config.auto) {
                 document.querySelectorAll('[data-scrollama-index="0"]')[0].scrollIntoView();
             }
-        });    
+        });
+        
+
 
     </script>
 
