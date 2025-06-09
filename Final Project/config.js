@@ -35,7 +35,7 @@ var config = {
             alignment: 'left',
             hidden: false,
             title: 'Mile 0 - Backpackers Campground',
-            image: './JMTPhotos/IMG_1412.jpg',
+            image: './IMG_1412.jpg',
             description: `
     A quiet pine grove on the Merced River, your first taste of wilderness.<br>
     <ul>
@@ -65,7 +65,7 @@ var config = {
             alignment: 'left',
             hidden: false,
             title: 'Mile 6.5 - Sunrise High Sieraa Camp',
-            image: './JMTPhotos/IMG_1431.jpg',
+            image: './IMG_1431.jpg',
             description: `
     After a steep climb out of the valley, you’ll crest into the high country at Sunrise Camp. Take a moment to look back at Yosemite Valley’s lush green, then peer forward to the jagged ridge lines that mark the Sierra Crest. <br>
     <ul>
@@ -94,7 +94,7 @@ var config = {
             alignment: 'left',
             hidden: false,
             title: 'Mile 22 - Lyell Canyon & Tuolumne Meadows',
-            image: './JMTPhotos/IMG_1497.jpg',
+            image: './IMG_1497.jpg',
             description: `
     Sunrise High Sierra Camp to Lyell Canyon. soft meadow grasses, wildflowers in summer, and the steady flow of the Lyell Fork. Pause at Tuolumne Meadows Grill for lunch on a sun-warmed deck
     <ul>
@@ -121,7 +121,7 @@ var config = {
             alignment: 'left',
             hidden: false,
             title: 'Mile 36 - Over Donohue Pass',
-            image: './JMTPhotos/IMG_1553.jpg',
+            image: './IMG_1553.jpg',
             description: `
     This is your first real taste of high-altitude trial by granite: Donohue Pass at 10,000 ft. The last few hundred feet are a scramble across steep slabs, but the payoff is a breathtaking panorama of Tioga Pass country.
     <ul>
@@ -147,7 +147,7 @@ var config = {
             alignment: 'left',
             hidden: false,
             title: 'Mile 59 - Reds Meadow Resort',
-            image: './JMTPhotos/IMG_1585.jpg',
+            image: './IMG_1585.jpg',
             description: `
     Reds Meadow is a true oasis - hot showers, clean laundry, resupply packages, and bustling trail camaraderie. Spend an afternoon lounging by the river, refill your water bottles at the Ranger station, and maybe even indulge in a milkshake before heading back into the backcountry.
     <ul>
@@ -173,7 +173,7 @@ var config = {
             alignment: 'left',
             hidden: false,
             title: 'Mile 74 - Lake Virginia',
-            image: './JMTPhotos/IMG_1608.jpg',
+            image: './IMG_1608.jpg',
             description: `
     Crystal-clear Lake Virginia sits like a jewel amid granite walls. Camp on its sandy shores and watch the mountains reflect at dawn. It’s the first real feeling that you’ve left civilization behind.
     <ul>
@@ -199,7 +199,7 @@ var config = {
             alignment: 'left',
             hidden: false,
             title: 'Mile 109 - Muir Trail Ranch',
-            image: './JMTPhotos/IMG_1632.jpg',
+            image: './IMG_1632.jpg',
             description: `
     A rustic ranch offering mail drops and a rare chance to dump trash.
     <ul>
@@ -224,7 +224,7 @@ var config = {
             alignment: 'left',
             hidden: false,
             title: 'Mile 127 - McClure Meadow',
-            image: './JMTPhotos/IMG_0197.jpeg',
+            image: './IMG_0197.jpeg',
             description: `
     McClure Meadow. Tough climb out of Muir Trail Ranch, especially if your backpack is freshly heavy and full from resupply.
     <ul>
@@ -250,7 +250,7 @@ var config = {
             alignment: 'left',
             hidden: false,
             title: 'Mile 141 - Muir Pass',
-            image: './JMTPhotos/IMG_0202.jpeg',
+            image: './IMG_0202.jpeg',
             description: `
     Muir Pass is the heart of this hike - home to the John Muir Memorial Shelter. At nearly 12,000 ft you’ll feel the thin air, taste the snowmelt, and appreciate the humbling vastness of the John Muir Wilderness.
     <ul>
@@ -276,7 +276,7 @@ var config = {
             alignment: 'left',
             hidden: false,
             title: 'Mile 157 - Mather Pass',
-            image: './JMTPhotos/IMG_1786.jpg',
+            image: './IMG_1786.jpg',
             description: `
     Arguably the toughest obstacle: Mather Pass. The final approach kicks up loose scree and steep slabs, then grants sweeping views. Camp at Majorie Lake below.
     <ul>
@@ -301,7 +301,7 @@ var config = {
             alignment: 'left',
             hidden: false,
             title: 'Mile 172 - Pinchot Pass & Rae Lakes',
-            image: './JMTPhotos/IMG_0201.jpg',
+            image: './IMG_0201.jpg',
             description: `
     Over Pinchot pass and camp at Rae Lakes. 
     <ul>
@@ -329,7 +329,7 @@ var config = {
             alignment: 'left',
             hidden: false,
             title: 'Mile 192 - Forester Pass',
-            image: './JMTPhotos/IMG_1827.jpg',
+            image: './IMG_1827.jpg',
             description: `
     The highest pass on the JMT — Forester Pass — is an exposed knife-edge of granite. Winds can roar, snow may linger, but once over the summit the rugged granitic canyons and rushing rivers spread out.
     <ul>
@@ -355,7 +355,7 @@ var config = {
             alignment: 'left',
             hidden: false,
             title: 'Mile 205 - Guitar Lake',
-            image: './JMTPhotos/IMG_0204.jpeg',
+            image: './IMG_0204.jpeg',
             description: `
     Guitar Lake, named for its shoreline’s shape, is the last true campsite before Mt. Whitney. Chilly nights, early mornings, and the prospect of the continent’s tallest peak ahead make this a campsite you’ll never forget.
     <ul>
@@ -381,7 +381,7 @@ var config = {
             alignment: 'left',
             hidden: false,
             title: 'Mile 211 - Mt. Whitney Summit',
-            image: './JMTPhotos/IMG_1907.jpg',
+            image: './IMG_1907.jpg',
             description: `
     Summit of Mt. Whitney, the highest mountain in the contiguous United States and the official end point of the JMT. The final push to the summit is a test of grit—2,000 ft of elevation gain over rough trail and talus fields. At the top, you’ll sign the summit register, and feel the triumphant rush of accomplishment.
     <ul>
@@ -406,7 +406,7 @@ var config = {
             alignment: 'left',
             hidden: false,
             title: 'Mile 222 - Whitney Portal',
-            image: './JMTPhotos/IMG_1942.jpg',
+            image: './IMG_1942.jpg',
             description: `
     The descent to Whitney Portal completes the journey: switchbacks through pines, the roar of Lone Pine Creek, and finally the trailhead’s bustle of cars, shuttle buses, and ice-cold drinks. You’ve hiked the length of the Sierra—and you’re forever changed.
     <ul>
