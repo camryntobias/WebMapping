@@ -24,12 +24,12 @@
         a:visited {
             color: #0071bc;
         }
-        /* ─────── HERO SECTION ─────── */
+
         #hero {
             position: relative;
             height: 100vh;
             width: 100vw;
-            background-image: url('hero.jpg');
+            background-image: url('./JMTPhotos/hero.jpg');
             background-size: cover;
             background-position: center;
             display: flex;
@@ -50,6 +50,38 @@
         #hero p {
             color: white;
         }
+
+        #hero .photo-credit {
+            position: absolute;
+            bottom: 1rem;
+            right: 1rem;
+            font-size: 0.75rem;
+            color: rgba(255,255,255,0.75);
+            text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+        }
+
+        #hero-end {
+            position: relative;
+            height: 100vh;
+            width: 100vw;
+            background-image: url('./JMTPhotos/IMG_0203.JPG'); /* swap in your end‐of‐trail photo */
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            z-index: 10;
+            }
+        #hero-end h1,
+        #hero-end h2 {
+            color: white;
+            text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+            margin: 0;
+        }
+        #hero-end h1 { font-size: 3rem; }
+        #hero-end h2 { font-size: 2rem; }
 
         #map {
             top: 0;
@@ -210,14 +242,20 @@
 </head>
 
 <body>
-
     <div id="hero">
         <h1>A Guide to Hiking the John Muir Trail</h1>
         <h2>The ins and outs of thru-hiking the spectacular Eastern Sierra Mountains</h2>
         <p>By Camryn Tobias</p>
+        <div class="photo-credit">
+            Photo By: @shotsbyliam_
+  </div>
     </div>
     <div id="map"></div>
     <div id="story"></div>
+    <div id="hero-end">
+        <h1>"In every walk with Nature one receives far more than he seeks" -John Muir</h1>
+        <h2>Here’s to your next adventure!</h2>
+    </div>
     <div id="scroll-arrow">↓</div>
     <div id="chart-container" style="position:fixed;bottom:0;left:0;width:100%;height:20vh;background:rgba(255,255,255,0.9);z-index:5;">
         <canvas id="elevation-chart"></canvas>
