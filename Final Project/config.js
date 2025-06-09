@@ -301,7 +301,7 @@ var config = {
             alignment: 'left',
             hidden: false,
             title: 'Mile 172 - Pinchot Pass & Rae Lakes',
-            image: 'IMG_0201.jpg',
+            image: 'IMG_0201.JPG',
             description: `
     Over Pinchot pass and camp at Rae Lakes. 
     <ul>
